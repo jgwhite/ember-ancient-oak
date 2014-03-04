@@ -1,0 +1,22 @@
+{
+  "name": "ember-persistent-data",
+  "version": "0.0.0",
+  "description": "",
+  "main": ".",
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "testem ci"
+  },
+  "author": "Jamie White <jamie@jgwhite.co.uk>",
+  "license": "MIT",
+  "devDependencies": {
+    "bower"                     : "~1.2.8",
+    "testem"                    : "~0.6.8",
+    "broccoli"                  : "~0.2.2",
+    "broccoli-cli"              : "~0.0.1",
+    "broccoli-env"              : "~0.0.1",
+    "broccoli-static-compiler"  : "~0.1.0",
+    "broccoli-es6-concatenator" : "~0.1.0",
+    "broccoli-template"         : "~0.1.0"
+  }
+}
