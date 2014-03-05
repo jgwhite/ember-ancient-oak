@@ -19,9 +19,10 @@ module.exports = function (broccoli) {
   })
   app = preprocess(app)
 
+  var lib = broccoli.makeTree('lib')
   var vendor = broccoli.makeTree('vendor')
 
-  var sourceTrees = [app, vendor]
+  var sourceTrees = [app, lib, vendor]
   sourceTrees = sourceTrees.concat(broccoli.bowerTrees())
 
   var appAndDependencies = new broccoli.MergedTree(sourceTrees)
@@ -38,7 +39,8 @@ module.exports = function (broccoli) {
       'jquery.js',
       'handlebars.js',
       'ember.js',
-      'ember-resolver.js'
+      'ember-resolver.js',
+      'ancient-oak-0.0.3.js'
     ],
     wrapInEval: env !== 'production',
     outputFile: '/assets/app.js'
