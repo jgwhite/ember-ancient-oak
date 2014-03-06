@@ -7,10 +7,14 @@
   <title>Persistent Ember</title>
 
   <link rel="stylesheet" href="/assets/app.css">
+  <link rel="stylesheet" href="/assets/qunit.css">
 
   <script src="/assets/app.js"></script>
+  <script src="/assets/qunit.js"></script>
 </head>
 <body>
-  <script>App = require('app/app').default.create()</script>
+  <div id="qunit"></div>
+  <div id="ember"><div id="ember-root"></div></div>
+  <script>require('app/tests/suite').run()</script>
 </body>
 </html>

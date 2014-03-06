@@ -1,1 +1,11 @@
-{{outlet}}
+<label>Who: {{input value=who autofocus=true}}</label>
+
+<hr>
+
+<h1>Hello, {{who}}!</h1>
+
+<hr>
+
+<p>Versions: {{versions}}</p>
+
+<p><button {{action "rollback"}}>Rollback</button></p>

@@ -4,25 +4,27 @@ module.exports = function (broccoli) {
   var pickFiles = require('broccoli-static-compiler')
   var env = require('broccoli-env').getEnv()
 
-  function preprocess (tree) {
-    tree = filterTemplates(tree, {
-      extensions: ['hbs', 'handlebars'],
-      compileFunction: 'Ember.Handlebars.compile'
-    })
-    return tree
-  }
-
   var app = broccoli.makeTree('app')
   app = pickFiles(app, {
-    srcDir: '/',
-    destDir: 'appkit'
+    srcDir: '',
+    destDir: 'app'
   })
-  app = preprocess(app)
+  app = filterTemplates(app, {
+    extensions: ['hbs', 'handlebars'],
+    compileFunction: 'Ember.Handlebars.compile'
+  })
 
   var lib = broccoli.makeTree('lib')
+
   var vendor = broccoli.makeTree('vendor')
 
-  var sourceTrees = [app, lib, vendor]
+  var tests = broccoli.makeTree('tests')
+  tests = pickFiles(tests, {
+    srcDir: '',
+    destDir: 'app/tests'
+  })
+
+  var sourceTrees = [app, lib, vendor, tests]
   sourceTrees = sourceTrees.concat(broccoli.bowerTrees())
 
   var appAndDependencies = new broccoli.MergedTree(sourceTrees)
@@ -33,7 +35,7 @@ module.exports = function (broccoli) {
       'ember/resolver'
     ],
     inputFiles: [
-      'appkit/**/*.js'
+      'app/**/*.js'
     ],
     legacyFilesToAppend: [
       'jquery.js',
@@ -48,5 +50,11 @@ module.exports = function (broccoli) {
 
   var publicFiles = broccoli.makeTree('public')
 
-  return [appJs, publicFiles]
+  var qunit = pickFiles(appAndDependencies, {
+    srcDir: '',
+    files: ['qunit.*'],
+    destDir: '/assets'
+  })
+
+  return [appJs, publicFiles, qunit]
 }
