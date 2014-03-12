@@ -1,0 +1,164 @@
+html {
+  height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+  outline: 1px solid red;
+  min-height: 100%;
+
+  font: 20px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 255, 0.25);
+  white-space: nowrap;
+  color: blue;
+}
+
+a.active {
+  font-weight: 400;
+}
+
+hr {
+  margin: 0;
+  border: 0;
+  height: 1px;
+
+  background: #eee;
+}
+
+h1 {
+  margin: 0 0 1em 0;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.25em 0em;
+
+  font-weight: 600;
+  color: #666;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+
+  margin: 0;
+  width: 100%;
+  border: 0;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  margin: -1px;
+  padding: 0.25em 0.5em;
+
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+button {
+  position: relative;
+  font: inherit;
+  background: #eee;
+  color: #666;
+  border: 1px solid #ccc;
+  padding: 0.125em 1em;
+  border-radius: 3px;
+  box-shadow:
+    0px 2px 0px #ddd,
+    0px 3px 0px #ccc;
+
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  outline: none;
+  top: 2px;
+  box-shadow:
+    0px 1px 0px #ccc;
+}
+
+button.good {
+  background: hsl(100, 50%, 50%);
+  border-color: hsl(100, 50%, 35%);
+  color: hsl(100, 50%, 10%);
+  font-weight: 400;
+  box-shadow:
+    0px 2px 0px hsl(100, 50%, 40%),
+    0px 3px 0px hsl(100, 50%, 35%);
+}
+button.good:active {
+  box-shadow:
+    0px 1px 0px hsl(100, 50%, 35%);
+}
+
+button.bad {
+  background: hsl(0, 50%, 60%);
+  border-color: hsl(0, 50%, 35%);
+  color: hsl(0, 50%, 30%);
+  font-weight: 400;
+  box-shadow:
+    0px 2px 0px hsl(0, 50%, 40%),
+    0px 3px 0px hsl(0, 50%, 35%);
+}
+button.bad:active {
+  box-shadow:
+    0px 1px 0px hsl(0, 50%, 35%);
+}
+
+button.primary {
+  padding: 0.125em 3em;
+}
+
+table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td {
+  padding: 8px 0;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-right {
+  float: right;
+}
+
+.container {
+  padding: 8px 16px;
+  overflow: hidden;
+}
+
+.masthead {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-weight: 600 !important;
+}
+
+.text-align-right {
+  text-align: right;
+}
+

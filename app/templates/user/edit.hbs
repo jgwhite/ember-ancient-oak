@@ -1,0 +1,20 @@
+<h1>Edit Your Details</h1>
+
+<form {{action "save" on="submit"}}>
+  <table>
+    <tr>
+      <td><label for="name">Name</label></td>
+      <td>{{input value=name type="text"}}</td>
+    <tr>
+    <tr>
+      <td><label for="email">Email</label></td>
+      <td>{{input value=email type="email"}}</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="text-align-right">
+        <button {{action "cancel"}} type="button">Cancel</button>
+        <button class="good" type="submit">Save</button>
+      </td>
+    </tr>
+  </table>
+</form>

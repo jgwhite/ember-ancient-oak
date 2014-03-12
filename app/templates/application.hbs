@@ -1,1 +1,17 @@
-<h1>Hello, World!</h1>
+<header class="container">
+  <nav class="header-left">
+    {{#link-to "index" class="masthead"}}Home{{/link-to}}
+  </nav>
+
+  <nav class="header-right">
+    {{#link-to "user.edit"}}{{user.name}}{{/link-to}}
+    —
+    {{#link-to "basket"}}Basket ({{user.basket.length}}){{/link-to}}
+  </nav>
+</header>
+
+<hr>
+
+<div class="container">
+  {{outlet}}
+</div>
