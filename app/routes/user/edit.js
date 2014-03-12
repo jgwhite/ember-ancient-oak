@@ -8,7 +8,7 @@ export default Ember.Route.extend({
       var user = this.get('user'),
           model = this.modelFor('user.edit');
 
-      user.setProperties(model);
+      user.mutate(model);
 
       this.transitionTo('index');
     },

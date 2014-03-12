@@ -2,16 +2,21 @@
 
 <form {{action "save" on="submit"}}>
   <table>
+    <colgroup>
+      <col class="label-col">
+      <col class="input-col">
+    </colgroup>
     <tr>
       <td><label for="name">Name</label></td>
-      <td>{{input value=name type="text"}}</td>
+      <td>{{input value=name type="text" id="name"}}</td>
     <tr>
     <tr>
       <td><label for="email">Email</label></td>
-      <td>{{input value=email type="email"}}</td>
+      <td>{{input value=email type="email" id="email"}}</td>
     </tr>
     <tr>
-      <td colspan="2" class="text-align-right">
+      <td>&nbsp;</td>
+      <td>
         <button {{action "cancel"}} type="button">Cancel</button>
         <button class="good" type="submit">Save</button>
       </td>

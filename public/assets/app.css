@@ -3,10 +3,11 @@ html {
 }
 
 body {
+  position: relative;
   box-sizing: border-box;
 
   margin: 0;
-  padding: 0;
+  padding: 0 0 64px 0;
   outline: 1px solid red;
   min-height: 100%;
 
@@ -20,18 +21,11 @@ a {
   border-bottom: 1px solid rgba(0, 0, 255, 0.25);
   white-space: nowrap;
   color: blue;
+  cursor: pointer;
 }
 
 a.active {
   font-weight: 400;
-}
-
-hr {
-  margin: 0;
-  border: 0;
-  height: 1px;
-
-  background: #eee;
 }
 
 h1 {
@@ -45,7 +39,7 @@ label {
   position: relative;
   box-sizing: border-box;
   margin: 0;
-  padding: 0.25em 0em;
+  padding: 0.25em 16px 0.25em 0;
 
   font-weight: 600;
   color: #666;
@@ -75,6 +69,7 @@ button {
   background: #eee;
   color: #666;
   border: 1px solid #ccc;
+  margin: 0 10px 0 0;
   padding: 0.125em 1em;
   border-radius: 3px;
   box-shadow:
@@ -138,6 +133,20 @@ td {
   padding: 8px 0;
 }
 
+.input-col {
+  width: 100%;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+}
+
+footer {
+  position: absolute;
+  right: 0; bottom: 0; left: 0;
+  border-top: 1px solid #ddd;
+}
+
 .header-left {
   float: left;
 }
@@ -147,6 +156,7 @@ td {
 }
 
 .container {
+  box-sizing: border-box;
   padding: 8px 16px;
   overflow: hidden;
 }
@@ -161,4 +171,3 @@ td {
 .text-align-right {
   text-align: right;
 }
-

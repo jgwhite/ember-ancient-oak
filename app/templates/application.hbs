@@ -10,8 +10,14 @@
   </nav>
 </header>
 
-<hr>
-
 <div class="container">
   {{outlet}}
 </div>
+
+<footer class="container">
+  Versions: {{user.versions.length}}
+  {{#if user.canRollback}}
+    —
+    <a {{action "rollback"}}>Rollback</a>
+  {{/if}}
+</footer>
