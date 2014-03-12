@@ -14,8 +14,6 @@ module.exports = function (broccoli) {
     compileFunction: 'Ember.Handlebars.compile'
   })
 
-  var lib = broccoli.makeTree('lib')
-
   var vendor = broccoli.makeTree('vendor')
 
   var tests = broccoli.makeTree('tests')
@@ -24,7 +22,7 @@ module.exports = function (broccoli) {
     destDir: 'app/tests'
   })
 
-  var sourceTrees = [app, lib, vendor, tests]
+  var sourceTrees = [app, vendor, tests]
   sourceTrees = sourceTrees.concat(broccoli.bowerTrees())
 
   var appAndDependencies = new broccoli.MergedTree(sourceTrees)
